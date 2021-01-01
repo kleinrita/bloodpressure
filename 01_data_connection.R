@@ -1,10 +1,11 @@
-library("googledrive")
+library(googledrive)
 library(readr)
 library(tidyverse)
 
 drive_find(n_max = 30)
 
 df_meta <- drive_get("Blood_Pressure_Tracking")
+
 drive_download("Blood_Pressure_Tracking", type = "csv")
 
 
@@ -18,16 +19,16 @@ df_1 <-
          Datetime=as.POSIXct(Datetime_string)
   )
 
-temp <- spline(df_1$Systolic)
-length(unlist(spline(df_1$Systolic)))
-length(unlist(df_1$Systolic))
+# temp <- spline(df_1$Systolic)
+# length(unlist(spline(df_1$Systolic)))
+# length(unlist(df_1$Systolic))
+# 
+# spline_int <- as.data.frame(spline(df_1$Datetime, df_1$Systolic))
 
-spline_int <- as.data.frame(spline(df_1$Datetime, df_1$Systolic))
-
-  ggplot(d) + 
-  geom_point(aes(x = hour, y = impressions, colour = cvr), size = 3) +
-  geom_line(data = spline_int, aes(x = x, y = y))
-
+  # ggplot() + 
+  # geom_point(aes(x = hour, y = impressions, colour = cvr), size = 3) +
+  # geom_line(data = spline_int, aes(x = x, y = y))
+  # 
 
 
 df_1 %>% 
