@@ -6,7 +6,7 @@ drive_find(n_max = 30)
 
 df_meta <- drive_get("Blood_Pressure_Tracking")
 
-drive_download("Blood_Pressure_Tracking", type = "csv")
+drive_download("Blood_Pressure_Tracking", type = "csv", overwrite = TRUE)
 
 
 
