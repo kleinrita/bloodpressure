@@ -1,0 +1,12 @@
+name: 04_Blood_Pressure_Tracking
+title: 04_Blood_Pressure_Tracking
+username:
+account: ritaklein
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3448144
+bundleId: 4065172
+url: https://ritaklein.shinyapps.io/04_Blood_Pressure_Tracking/
+when: 1609952636.80962
+asMultiple: FALSE
+asStatic: FALSE
