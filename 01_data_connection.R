@@ -2,7 +2,7 @@ library(googledrive)
 library(readr)
 library(tidyverse)
 
-drive_find(n_max = 30)
+# drive_find(n_max = 30)
 
 df_meta <- drive_get("Blood_Pressure_Tracking")
 
