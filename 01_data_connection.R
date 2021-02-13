@@ -30,8 +30,24 @@ df_1 <-
   # geom_line(data = spline_int, aes(x = x, y = y))
   # 
 
+color_sys <- "darkblue"
+color_dia <- "darkgreen"
+color_pulse <- "orange"
 
-df_1 %>% 
+xmin_df <- df_1 %>% select(Datetime) %>% unlist() %>% min() %>%  as.POSIXct(origin = '1970-01-01')
+xmax_df <- df_1 %>% select(Datetime) %>% unlist() %>% max() %>%  as.POSIXct(origin = '1970-01-01')
+
+refline_sys_high <-130 
+refline_sys_low <- 110 
+refline_dia_high <- 90
+refline_dia_low <- 70  
+refline_pulse_high <- 80
+refline_pulse_low <- 50  
+
+alpha <- 0.5
+
+plot <- 
+  df_1 %>% 
   ggplot()+
   stat_smooth(aes(x=Datetime, y=Systolic), formula = y ~ s(x, k = 60), method = "gam", se = FALSE,colour="darkblue")+
   stat_smooth(aes(x=Datetime, y=Diastolic), formula = y ~ s(x, k = 40), method = "gam", se = FALSE,colour="darkgreen")+
@@ -44,6 +60,8 @@ df_1 %>%
   geom_point(aes(x=Datetime, y=Pulse), colour="orange")+
   scale_y_continuous(breaks = seq(50, 190, by = 10))
   
+print(plot)
+
 
 
 
